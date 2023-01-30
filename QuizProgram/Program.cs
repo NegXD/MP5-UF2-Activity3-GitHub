@@ -1,7 +1,7 @@
-﻿internal class Program
+﻿public class Program
 {
     #region Main
-    private static void Main(string[] args)
+    public static void Main(string[] args)
     {
         ConsoleKeyInfo tecla;
         do
@@ -14,6 +14,9 @@
             {
                 case ConsoleKey.D1:
                     CShareQuiz();
+                    break;
+                case ConsoleKey.D2:
+                    WorldMapQuiz();
                     break;
                 case ConsoleKey.D0:
                     MsgNextScreen("PRESS ANY KEY TO EXIT");
@@ -32,6 +35,7 @@
     public static void ShowOptions()
     {
         Console.WriteLine("1 - C# QUEST");
+        Console.WriteLine("2 - WORLD MAP QUEST");
         Console.WriteLine();
         Console.WriteLine("0 - EXIT");
     }
@@ -44,6 +48,7 @@
 
     #endregion
 
+    #region C# Quest
     public static void CShareQuiz()
     {
         ConsoleKeyInfo key;
@@ -101,4 +106,68 @@
             MsgNextScreen("PRESS A KEY TO GO TO THE MAIN MENU");
         }
     }
+
+    #endregion
+
+    #region 
+
+    public static void WorldMapQuiz()
+    {
+        ConsoleKeyInfo key;
+        int count = 0;
+        try
+        {
+            Console.WriteLine("In the world map were is Austraria located?");
+            Console.WriteLine("1. \t In the left part of the map");
+            Console.WriteLine("2. \t In the right part of the map");
+            Console.WriteLine("3. \t In the bottom part of the map");
+            key = Console.ReadKey();
+            if (key.Key == ConsoleKey.D2) count++;
+            Console.Clear();
+
+            Console.WriteLine("Who is the creator of the first world map? ");
+            Console.WriteLine("1. \t Hejlsberg");
+            Console.WriteLine("2. \t Niklaus");
+            Console.WriteLine("3. \t Anaximandro");
+            key = Console.ReadKey();
+            if (key.Key == ConsoleKey.D3) count++;
+            Console.Clear();
+
+            Console.WriteLine("The first world map (anaximandro) appeared is in ");
+            Console.WriteLine("1. \t 1323 B.C.");
+            Console.WriteLine("2. \t 520 B.C.");
+            Console.WriteLine("3. \t 129 A.D.");
+            key = Console.ReadKey();
+            if (key.Key == ConsoleKey.D2) count++;
+            Console.Clear();
+
+            Console.WriteLine("In the map Anaximandro which continent is not appeared");
+            Console.WriteLine("1. \t American");
+            Console.WriteLine("2. \t Africa");
+            Console.WriteLine("3. \t Asia");
+            key = Console.ReadKey();
+            if (key.Key == ConsoleKey.D1) count++;
+            Console.Clear();
+
+            Console.WriteLine("Were is antartida");
+            Console.WriteLine("1. \tIn the left part of the map");
+            Console.WriteLine("2. \tIn the right part of the map");
+            Console.WriteLine("3. \tIn the bottom part of the map");
+            key = Console.ReadKey();
+            if (key.Key == ConsoleKey.D3) count++;
+            Console.Clear();
+
+            Console.WriteLine($"You have {count} of 5 points");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        finally
+        {
+            MsgNextScreen("PRESS A KEY TO GO TO THE MAIN MENU");
+        }
+    }
+
+    #endregion
 }
