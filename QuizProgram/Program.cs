@@ -18,6 +18,9 @@
                 case ConsoleKey.D2:
                     WorldMapQuiz();
                     break;
+                case ConsoleKey.D3:
+                    LinuxCommandQuiz();
+                    break;
                 case ConsoleKey.D0:
                     MsgNextScreen("PRESS ANY KEY TO EXIT");
                     break;
@@ -36,6 +39,7 @@
     {
         Console.WriteLine("1 - C# QUEST");
         Console.WriteLine("2 - WORLD MAP QUEST");
+        Console.WriteLine("3 - LINUX COMMANDS QUEST");
         Console.WriteLine();
         Console.WriteLine("0 - EXIT");
     }
@@ -155,6 +159,68 @@
             Console.WriteLine("3. \tIn the bottom part of the map");
             key = Console.ReadKey();
             if (key.Key == ConsoleKey.D3) count++;
+            Console.Clear();
+
+            Console.WriteLine($"You have {count} of 5 points");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        finally
+        {
+            MsgNextScreen("PRESS A KEY TO GO TO THE MAIN MENU");
+        }
+    }
+
+    #endregion
+
+    #region
+
+    public static void LinuxCommandQuiz()
+    {
+        ConsoleKeyInfo key;
+        int count = 0;
+        try
+        {
+            Console.WriteLine("What is the ls command for?");
+            Console.WriteLine("1. \t To see what's in a directory");
+            Console.WriteLine("2. \t To see what's in a file");
+            Console.WriteLine("3. \t To see what's in a main directory");
+            key = Console.ReadKey();
+            if (key.Key == ConsoleKey.D1) count++;
+            Console.Clear();
+
+            Console.WriteLine("What is the variable -al in the ls command");
+            Console.WriteLine("1. \t list files with detailed information ");
+            Console.WriteLine("2. \t List directories with detailed information");
+            Console.WriteLine("3. \t List files and directories with detailed information");
+            key = Console.ReadKey();
+            if (key.Key == ConsoleKey.D3) count++;
+            Console.Clear();
+
+            Console.WriteLine("What does the command head does?");
+            Console.WriteLine("1. \t View the lines of any text file");
+            Console.WriteLine("2. \t View the first few lines of any text file");
+            Console.WriteLine("3. \t view the half lines of any text file");
+            key = Console.ReadKey();
+            if (key.Key == ConsoleKey.D2) count++;
+            Console.Clear();
+
+            Console.WriteLine("What does the command diff does?");
+            Console.WriteLine("1. \t Compares the weight of two files");
+            Console.WriteLine("2. \t Compares the character of two files");
+            Console.WriteLine("3. \t Compares the contents of two files line by line");
+            key = Console.ReadKey();
+            if (key.Key == ConsoleKey.D3) count++;
+            Console.Clear();
+
+            Console.WriteLine("What does the command rsync does?");
+            Console.WriteLine("1. \t Transfers and synchronizes files or directories");
+            Console.WriteLine("2. \t Synchronizes files or directories");
+            Console.WriteLine("3. \t Transfers files or directories");
+            key = Console.ReadKey();
+            if (key.Key == ConsoleKey.D1) count++;
             Console.Clear();
 
             Console.WriteLine($"You have {count} of 5 points");
